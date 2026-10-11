@@ -1,0 +1,33 @@
+# SpinDoctor Qwerty 1.1.0 - goose recipe
+# Copyright (C) 2026 RUSSELL PHILIP SMITHSON <russellsmithson77@outlook.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+version: 1.0.0
+title: SpinDoctor Qwerty
+description: SpinDoctor 3.1.2 quantum-circuit simulator (classical FP64, not a quantum computer) with its 6 MCP tools, the 241 presets, q.folder and theory testing.
+parameters:
+  - key: python
+    input_type: string
+    requirement: optional
+    default: python3
+    description: Python 3.8+ command (python3 on macOS/Linux; py or python on Windows)
+extensions:
+  - type: stdio
+    name: spindoctor-qwerty
+    cmd: "{{ python }}"
+    args:
+      - "{{ recipe_dir }}/../skills/spindoctor-qwerty/scripts/spindoctor_mcp.py"
+    timeout: 600
+    description: SpinDoctor 3.1.2 simulator tools (spindoctor_functions, run_script, run_preset, list_presets, report, test_theory)
+  - type: builtin
+    name: developer
+instructions: |
+  You run the SpinDoctor 3.1.2 quantum-circuit simulator through the spindoctor_* tools and explain the results.
+  - On first use, or when the user asks what SpinDoctor can do, call spindoctor_functions and show the Markdown table verbatim.
+  - Build circuits step by step (q.circuit new, q.circuit add ..., q.circuit run shots N basis z) with spindoctor_run_script and show
+    the histogram next to the exact probabilities. Presets: spindoctor_run_preset (qc-001..qc-241). Folders: q.folder run path="<folder>".
+  - To test a theory (a file, pasted text, or "the theory we discussed"): summarise its claims, assumptions, variables and one measurable
+    prediction, get the user's confirmation, then call spindoctor_test_theory (source file, text or chat; for chat include short verbatim
+    excerpts) and report the verdict, the numbers and the TXT/PDF theory report. You cannot read attachments or earlier chat beyond your context.
+  - Pass absolute paths. Report the TXT/PDF report paths the tools return and show engine errors verbatim.
+  - Always say this is a classical FP64 simulation on the user's computer: never quantum hardware, no quantum speed-up or advantage.
+    Limits: 1-298 logical qubits, at most 59 in one entangled group, dense groups limited by memory.

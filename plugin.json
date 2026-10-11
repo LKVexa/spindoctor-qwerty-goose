@@ -1,0 +1,19 @@
+{
+  "name": "spindoctor-qwerty",
+  "version": "1.1.0",
+  "description": "SpinDoctor 3.1.2 quantum-circuit simulator for goose: skill + bundled stdlib-only Python engine (CLI and MCP server), 241 presets, q.folder, theory testing, TXT/PDF/JSON/CSV reports. Classical FP64 simulation, not a quantum computer.",
+  "author": {
+    "name": "RUSSELL PHILIP SMITHSON",
+    "email": "russellsmithson77@outlook.com"
+  },
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/LKVexa/spindoctor-qwerty-goose",
+  "repository": "https://github.com/LKVexa/spindoctor-qwerty-goose",
+  "keywords": [
+    "quantum",
+    "simulator",
+    "mcp",
+    "goose",
+    "education"
+  ]
+}
